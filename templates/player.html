@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player Info</title>
+</head>
+<body>
+    <h1>Soccer Information</h1>
+
+    <h2>Players</h2>
+    <ul>
+        {% for player in data['players'] %}
+            <li>{{ player }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">
+        <button>Go to home</button>
+    </a>
+</body>
+</html>
+
