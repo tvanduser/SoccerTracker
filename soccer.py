@@ -33,15 +33,25 @@ def player():
 
 @app.route("/team")
 def team():
+    cur = mysql.connection.cursor()
+    cur.execute("Select Club_Name from Club")
+    teams = [row[0] for row in cur.fetchall()]
+    cur.close()
+
     data = {
-            "teams": ["Team A", "Team B", "Team C"]
+            "teams": teams
             }
     return render_template("team.html", data=data)
 
 @app.route("/league")
 def league():
+    cur = mysql.connection.cursor()
+    cur.execute("Select League_Name from League")
+    leagues = [row[0] for row in cur.fetchall()]
+    cur.close()
+
     data = {
-            "leagues": ["League 1", "League 2", "League 3"]
+            "leagues": leagues
             }
     return render_template("league.html", data=data)
 
