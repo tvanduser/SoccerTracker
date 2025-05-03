@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Player Info</title>
-</head>
-<body>
+<!-- templates/player.html -->
+{% extends "base.html" %}
+
+{% block content %}
     <h1>Player Information</h1>
     <h2>Players</h2>
     <p>Click a player below to view more information</p>
@@ -14,10 +10,5 @@
             <li>{{ player }}</li>
         {% endfor %}
     </ul>
-
-    <a href="/">
-        <button>Go to home</button>
-    </a>
-</body>
-</html>
+{% endblock %}
 

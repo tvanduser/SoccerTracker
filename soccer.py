@@ -16,7 +16,7 @@ mysql = MySQL(app)
 #-------routing
 @app.route("/")
 def home_page():
-    return render_template("index.html")
+    return render_template("home.html")
 
 #player
 @app.route("/player")

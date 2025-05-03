@@ -1,0 +1,24 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Soccer App</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">Home</a> |
+                <a href="/player">Players</a> |
+                <a href="/team">Teams</a> |
+                <a href="/league">Leagues</a> |
+                <a href="/country">Country</a>
+            </nav>
+            <hr>
+        </header>
+
+        {% block content %}{% endblock %}
+    </body>
+</html>
+
