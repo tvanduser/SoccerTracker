@@ -1,10 +1,15 @@
+<!-- templates/player.html -->
 {% extends "base.html" %}
+
 {% block content %}
 <h1>League Information</h1>
-<h2>league</h2>
+<h2>Leagues</h2>
+<p>Click a league below to view more information</p>
 <ul>
+</ul<ul>
     {% for league in data['leagues'] %}
-    <li>{{ league }}</li>
+    <li><a href="{{ url_for('league_detail', league_name=league) }}">{{ league }}</a></li>
     {% endfor %}
 </ul>
 {% endblock %}
+
