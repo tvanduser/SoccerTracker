@@ -2,13 +2,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Player Information</h1>
-    <h2>Players</h2>
-    <p>Click a player below to view more information</p>
-    <ul>
-        {% for player in data['players'] %}
-            <li>{{ player }}</li>
-        {% endfor %}
-    </ul>
+<h1>Player Information</h1>
+<h2>Players</h2>
+<p>Click a player below to view more information</p>
+<ul>
+</ul<ul>
+    {% for player in data['players'] %}
+    <li><a href="{{ url_for('player_detail', player_name=player) }}">{{ player }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
 

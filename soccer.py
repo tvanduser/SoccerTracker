@@ -32,6 +32,24 @@ def player():
             }
     return render_template("player.html", data=data)
 
+@app.route("/player/<player_name>")
+def player_detail(player_name):
+    cur = mysql.connection.cursor()
+
+    cur.execute("SELECT * FROM player WHERE Player_Name = %s", (player_name,))
+    row = cur.fetchone()
+
+    if not row:
+        cur.close()
+        return f"No data found for player: {player_name}", 404
+
+    # Get column names from the cursor description
+    column_names = [desc[0] for desc in cur.description]
+    player_data = dict(zip(column_names, row))
+
+    cur.close()
+    return render_template("player_details.html", player=player_data)
+
 #team page
 @app.route("/team")
 def team():
