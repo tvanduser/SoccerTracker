@@ -1,16 +1,14 @@
+<!-- templates/player.html -->
 {% extends "base.html" %}
+
 {% block content %}
-    <h1>Team Information</h1>
-
-    <h2>Teams</h2>
-    <ul>
-        {% for team in data['teams'] %}
-            <li>{{ team }}</li>
-        {% endfor %}
-    </ul>
-
-    <a href="/">
-        <button>Go to home</button>
-    </a>
+<h1>Team Information</h1>
+<h2>Teams</h2>
+<p>Click a team below to view more information</p>
+<ul>
+</ul<ul>
+    {% for team in data['teams'] %}
+    <li><a href="{{ url_for('team_detail', team_name=team) }}">{{ team }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
-

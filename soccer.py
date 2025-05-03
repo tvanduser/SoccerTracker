@@ -63,6 +63,25 @@ def team():
             }
     return render_template("team.html", data=data)
 
+
+@app.route("/team/<team_name>")
+def team_detail(team_name):
+    cur = mysql.connection.cursor()
+
+    cur.execute("SELECT * FROM Club WHERE Club_Name = %s", (team_name,))
+    row = cur.fetchone()
+
+    if not row:
+        cur.close()
+        return f"No data found for team: {team_name}", 404
+
+    # Get column names from the cursor description
+    column_names = [desc[0] for desc in cur.description]
+    team_data = dict(zip(column_names, row))
+
+    cur.close()
+    return render_template("team_details.html", team=team_data)
+
 #league page
 @app.route("/league")
 def league():
