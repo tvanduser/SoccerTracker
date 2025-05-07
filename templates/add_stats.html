@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Add Stats for {{ player_name }}</h2>
+<form method="POST">
+    <label>Season (Year):</label><br>
+    <input type="number" name="season" required><br><br>
+
+    <label>Games Played:</label><br>
+    <input type="number" name="games_played" required><br><br>
+
+    <label>Goals:</label><br>
+    <input type="number" name="goals" required><br><br>
+
+    <label>Assists:</label><br>
+    <input type="number" name="assists" required><br><br>
+
+    <input type="submit" value="Add Stats">
+</form>
+{% endblock %}
+

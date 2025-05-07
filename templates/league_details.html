@@ -1,11 +1,15 @@
+<!-- league_details, display the league name and what teams are in it -->
 {% extends "base.html" %}
-
 {% block content %}
-    <h1>{{ league['League_Name'] }}</h1>
-    <ul>
-        {% for key, value in league.items() %}
-            <li><strong>{{ key }}:</strong> {{ value }}</li>
-        {% endfor %}
-    </ul>
+<h2>{{ league_name }} Clubs</h2>
+<ul>
+    {% for team in clubs %}
+    <li>{{ team }}</li>
+    {% endfor %}
+</ul>
+<a href="{{ url_for('add_stats', player_name=player['Player_Name']) }}">
+    <button>Add Stats</button>
+</a>
+
 {% endblock %}
 

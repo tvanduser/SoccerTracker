@@ -11,5 +11,8 @@
     <li><a href="{{ url_for('player_detail', player_name=player) }}">{{ player }}</a></li>
     {% endfor %}
 </ul>
+<a href="{{ url_for('add_player') }}">
+    <button>Add New Player</button>
+</a>
 {% endblock %}
 

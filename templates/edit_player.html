@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Player: {{ player['Player_Name'] }}</h1>
+<form method="POST">
+    <label>Name:</label>
+    <input type="text" name="Player_Name" value="{{ player['Player_Name'] }}"><br>
+
+    <label>Date of Birth:</label>
+    <input type="date" name="Date_of_Birth" value="{{ player['Date_of_Birth'] }}"><br>
+
+    <label>Nationality:</label>
+    <input type="text" name="Nationality" value="{{ player['Nationality'] }}"><br>
+
+    <label>Club:</label>
+    <input type="text" name="Club" value="{{ player['Club_Name'] }}"><br>
+
+    <label>Position:</label>
+    <input type="text" name="Position" value="{{ player['Position_Name'] }}"><br>
+
+    <button type="submit">Save Changes</button>
+</form>
+{% endblock %}
+

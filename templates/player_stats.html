@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>{{ player_name }} - Stats</h1>
+
+    {% if stats %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Season</th>
+                    <th>Goals</th>
+                    <th>Assists</th>
+                    <th>Games Played</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stat in stats %}
+                    <tr>
+                        <td>{{ stat[0] }}</td>
+                        <td>{{ stat[1] }}</td>
+                        <td>{{ stat[2] }}</td>
+                        <td>{{ stat[3] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No stats available for this player.</p>
+    {% endif %}
+
+    <a href="{{ url_for('player_detail', player_name=player_name) }}">Back to Player Profile</a>
+{% endblock %}
+
