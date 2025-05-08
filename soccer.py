@@ -242,7 +242,6 @@ def team_detail(team_name):
 
     cur.close()
     return render_template("team_details.html", team=team_data)
-
 #league page
 @app.route("/league")
 def league():
@@ -286,4 +285,3 @@ def country():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
