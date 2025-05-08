@@ -2,10 +2,10 @@
 **Application that communicates with MySQL to manage soccer related things**
 
 ## How to install 
-pip install flask flask-mysqldb
+    pip install flask flask-mysqldb
     this lets you be ableto connect to the database
 
-you also need to create a .env file where you place your DB_PASSWORD
+    you also need to create a .env file where you place your DB_PASSWORD
 ## Player functionality
     view player details
     update player information 
