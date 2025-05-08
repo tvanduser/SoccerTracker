@@ -1,7 +1,7 @@
 # SoccerTracker
 **Application that communicates with MySQL to manage soccer related things**
 
-# How to install #
+## How to install 
 pip install flask flask-mysqldb
     this lets you be ableto connect to the database
 
